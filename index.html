@@ -34,7 +34,7 @@
             First Name <span>*</span>
           </label>
           <input
-            class="validatable"
+            class="validatable input-container"
             id="firstName"
             type="text"
             name="firstName"
@@ -45,7 +45,7 @@
         <div>
           <label class="label" for="lastName"> Last Name <span>*</span> </label>
           <input
-            class="validatable"
+            class="validatable input-container"
             id="lastName"
             type="text"
             name="lastName"
@@ -57,7 +57,12 @@
           <label class="label" for="email">
             Email Address <span>*</span>
           </label>
-          <input class="validatable" id="email" type="email" name="email" />
+          <input
+            class="validatable input-container"
+            id="email"
+            type="email"
+            name="email"
+          />
           <p id="errorEmail" class="error">
             Please enter a valid email address
           </p>
@@ -99,7 +104,7 @@
           <textarea
             name="message"
             id="message"
-            class="textarea validatable"
+            class="textarea validatable input-container"
             rows="4"
           ></textarea>
           <p id="errorMessage" class="error">This field is required</p>

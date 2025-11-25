@@ -26,18 +26,9 @@ textarea {
   font-size: var(--fs-4);
   font-family: inherit;
   color: var(--clr-grey-2);
-
-  border-radius: var(--br-2);
-  border-width: 0px;
-  outline: 1px solid var(--clr-grey-1);
   // border-color: var(--clr-grey-1);
 
   cursor: pointer;
-
-  &:focus,
-  &:hover {
-    outline-color: var(--clr-primary);
-  }
 }
 
 .error {

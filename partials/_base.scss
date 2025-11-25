@@ -16,3 +16,14 @@ body {
 
   padding: var(--sp-5);
 }
+
+.input-container {
+  border-radius: var(--br-2);
+  border-width: 0px;
+  outline: 1px solid var(--clr-grey-1);
+
+  &:focus,
+  &:hover {
+    outline-color: var(--clr-primary);
+  }
+}
