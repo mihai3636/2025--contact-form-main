@@ -5,7 +5,7 @@ legend.label {
   margin-block-end: var(--sp-4);
 }
 
-fieldset > .validatable {
+form .validatable {
   position: relative;
 }
 
@@ -18,7 +18,7 @@ fieldset > .validatable {
   align-items: center;
   gap: var(--sp-3);
 
-  margin-block-end: 10px;
+  margin-block-end: var(--sp-4);
 }
 
 input[type="radio"]:checked {

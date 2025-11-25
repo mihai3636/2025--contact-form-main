@@ -85,6 +85,10 @@ body {
   padding: var(--sp-5);
 }
 
+label {
+  display: block;
+}
+
 .input-container {
   border-radius: var(--br-2);
   border-width: 0px;
@@ -114,7 +118,7 @@ body {
 }
 
 .form > *:not(:last-child) {
-  margin-block-end: var(--sp-3);
+  margin-block-end: var(--sp-4);
 }
 
 .label {
@@ -123,7 +127,9 @@ body {
   color: var(--clr-grey-2);
   margin-block-end: var(--sp-1);
 }
-.label span {
+
+.label span,
+.checkbox-label span {
   color: var(--clr-primary);
 }
 
@@ -157,7 +163,7 @@ legend.label {
   margin-block-end: var(--sp-4);
 }
 
-fieldset > .validatable {
+form .validatable {
   position: relative;
 }
 
@@ -168,7 +174,7 @@ fieldset > .validatable {
   display: flex;
   align-items: center;
   gap: var(--sp-3);
-  margin-block-end: 10px;
+  margin-block-end: var(--sp-4);
 }
 
 input[type=radio]:checked + .radio-container {
@@ -223,6 +229,26 @@ input[type=radio]:checked + .radio-container > .checkbox::after {
 }
 .btn:hover {
   background-color: var(--clr-grey-2);
+}
+
+.consent {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  cursor: pointer;
+}
+
+.checkbox--consent {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--clr-grey-1);
+}
+
+.input-checkbox:checked + .checkbox--consent {
+  border-color: var(--clr-primary);
+  background-image: url("../assets/images/icon-checkbox-check.svg");
+  background-position: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

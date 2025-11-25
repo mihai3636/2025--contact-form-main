@@ -17,6 +17,10 @@ body {
   padding: var(--sp-5);
 }
 
+label {
+  display: block;
+}
+
 .input-container {
   border-radius: var(--br-2);
   border-width: 0px;
