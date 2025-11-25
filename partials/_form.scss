@@ -22,7 +22,7 @@ input[type="text"],
 input[type="email"],
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: var(--sp-3);
   font-size: var(--fs-4);
   font-family: inherit;
   color: var(--clr-grey-2);
@@ -36,8 +36,6 @@ textarea {
 
   &:focus,
   &:hover {
-    // outline: 1px solid var(--clr-primary);
-    // border-color: var(--clr-primary);
     outline-color: var(--clr-primary);
   }
 }

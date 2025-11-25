@@ -37,6 +37,7 @@
   --sp-12: 8rem;
   --br-1: 0.625rem;
   --br-2: 0.3125rem;
+  --br-circle: 50%;
   --lh-1: 1;
   --lh-2: 1.2;
   --card-max-width: 46rem;
@@ -69,6 +70,10 @@ input:focus {
 img {
   max-width: 100%;
   display: block;
+}
+
+fieldset {
+  border: none;
 }
 
 body {
@@ -121,7 +126,7 @@ input[type=text],
 input[type=email],
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: var(--sp-3);
   font-size: var(--fs-4);
   font-family: inherit;
   color: var(--clr-grey-2);
@@ -151,6 +156,73 @@ textarea:hover {
 
 .validatable {
   margin-block-end: var(--sp-3);
+}
+
+.input-container {
+  border-radius: var(--br-2);
+  border-width: 0px;
+  outline: 1px solid var(--clr-grey-1);
+}
+.input-container:focus, .input-container:hover {
+  outline-color: var(--clr-primary);
+}
+
+legend.label {
+  margin-block-end: var(--sp-4);
+}
+
+fieldset > .validatable {
+  position: relative;
+}
+
+.radio-container {
+  cursor: pointer;
+  padding-inline: var(--sp-5);
+  padding-block: var(--sp-3);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-block-end: 10px;
+}
+
+input[type=radio]:checked + .radio-container {
+  outline-color: var(--clr-primary);
+  background-color: var(--clr-primary-tint);
+}
+input[type=radio]:checked + .radio-container > .checkbox {
+  outline: 1px solid var(--clr-primary);
+  position: relative;
+}
+input[type=radio]:checked + .radio-container > .checkbox::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--clr-primary);
+  border-radius: var(--br-circle);
+  margin: 2px;
+}
+
+.out-of-flow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--br-circle);
+  outline: 1px solid var(--clr-grey-1);
+}
+
+.radio-label {
+  color: var(--clr-grey-2);
+  line-height: var(--lh-2);
 }
 
 .btn {
