@@ -1,14 +1,14 @@
 @use "./utils" as *;
 
 :root {
-  --clr-primary: hsl(169, 82%, 27%);
+  --clr-primary: #0c7d69;
   --clr-primary-tint: hsl(148, 38%, 91%);
 
   --clr-secondary: hsl(0, 66%, 54%);
 
-  --clr-white: hsl(0, 0%, 100%);
-  --clr-grey-1: hsl(186, 15%, 59%);
-  --clr-grey-2: hsl(187, 24%, 22%);
+  --clr-white: #ffffff;
+  --clr-grey-1: #87a3a6;
+  --clr-grey-2: #2b4246;
 
   --ff-main: "Karla";
 
@@ -46,5 +46,14 @@
   --sp-11: #{toRem(96px)};
   --sp-12: #{toRem(128px)};
 
+  // BORDER RADIUS
+  --br-1: #{toRem(10px)};
+  --br-2: #{toRem(5px)};
+
+  // LINE HEIGHT
+  --lh-1: 1;
+  --lh-2: 1.2;
+
+  --card-max-width: #{toRem(736px)};
   --desktop-container-width: #{toRem(600px)};
 }

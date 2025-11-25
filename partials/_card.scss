@@ -1,0 +1,20 @@
+@use "utils" as *;
+@use "variables" as *;
+
+.card {
+  width: 100%;
+  max-width: var(--card-max-width);
+  background-color: var(--clr-white);
+  padding: var(--sp-6);
+  border-radius: var(--br-1);
+}
+
+.header {
+  margin-block-end: var(--sp-5);
+}
+.title {
+  line-height: var(--lh-1);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-bold);
+  color: var(--clr-grey-2);
+}

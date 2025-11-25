@@ -1,10 +1,10 @@
 :root {
-  --clr-primary: hsl(169, 82%, 27%);
+  --clr-primary: #0c7d69;
   --clr-primary-tint: hsl(148, 38%, 91%);
   --clr-secondary: hsl(0, 66%, 54%);
-  --clr-white: hsl(0, 0%, 100%);
-  --clr-grey-1: hsl(186, 15%, 59%);
-  --clr-grey-2: hsl(187, 24%, 22%);
+  --clr-white: #ffffff;
+  --clr-grey-1: #87a3a6;
+  --clr-grey-2: #2b4246;
   --ff-main: "Karla";
   --fw-normal: 400;
   --fw-bold: 700;
@@ -35,6 +35,11 @@
   --sp-10: 5rem;
   --sp-11: 6rem;
   --sp-12: 8rem;
+  --br-1: 0.625rem;
+  --br-2: 0.3125rem;
+  --lh-1: 1;
+  --lh-2: 1.2;
+  --card-max-width: 46rem;
   --desktop-container-width: 37.5rem;
 }
 
@@ -57,6 +62,10 @@ button {
   font-size: inherit;
 }
 
+input:focus {
+  outline: none;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -68,6 +77,94 @@ body {
   font-weight: var(--fw-normal);
   line-height: 1.5;
   background-color: var(--clr-primary-tint);
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--sp-5);
+}
+
+.card {
+  width: 100%;
+  max-width: var(--card-max-width);
+  background-color: var(--clr-white);
+  padding: var(--sp-6);
+  border-radius: var(--br-1);
+}
+
+.header {
+  margin-block-end: var(--sp-5);
+}
+
+.title {
+  line-height: var(--lh-1);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-bold);
+  color: var(--clr-grey-2);
+}
+
+.form > *:not(:last-child) {
+  margin-block-end: var(--sp-3);
+}
+
+.label {
+  display: block;
+  font-size: var(--fs-3);
+  color: var(--clr-grey-2);
+  margin-block-end: var(--sp-1);
+}
+.label span {
+  color: var(--clr-primary);
+}
+
+input[type=text],
+input[type=email],
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: var(--fs-4);
+  font-family: inherit;
+  color: var(--clr-grey-2);
+  border-radius: var(--br-2);
+  border-width: 0px;
+  outline: 1px solid var(--clr-grey-1);
+  cursor: pointer;
+}
+input[type=text]:focus, input[type=text]:hover,
+input[type=email]:focus,
+input[type=email]:hover,
+textarea:focus,
+textarea:hover {
+  outline-color: var(--clr-primary);
+}
+
+.error {
+  display: none;
+  color: var(--clr-secondary);
+  font-size: var(--fs-3);
+  line-height: var(--lh-2);
+}
+
+.error--visible {
+  display: block;
+}
+
+.validatable {
+  margin-block-end: var(--sp-3);
+}
+
+.btn {
+  width: 100%;
+  padding: var(--sp-4);
+  border: none;
+  font: inherit;
+  color: var(--clr-white);
+  background-color: var(--clr-primary);
+  cursor: pointer;
+  border-radius: var(--br-2);
+}
+.btn:hover {
+  background-color: var(--clr-grey-2);
 }
 
 /*# sourceMappingURL=styles.css.map */

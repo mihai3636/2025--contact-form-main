@@ -1,0 +1,58 @@
+@use "utils" as *;
+@use "variables" as *;
+
+.form > *:not(:last-child) {
+  // display: flex;
+  // flex-direction: column;
+  margin-block-end: var(--sp-3);
+}
+
+.label {
+  display: block;
+  font-size: var(--fs-3);
+  color: var(--clr-grey-2);
+  margin-block-end: var(--sp-1);
+
+  span {
+    color: var(--clr-primary);
+  }
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: var(--fs-4);
+  font-family: inherit;
+  color: var(--clr-grey-2);
+
+  border-radius: var(--br-2);
+  border-width: 0px;
+  outline: 1px solid var(--clr-grey-1);
+  // border-color: var(--clr-grey-1);
+
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    // outline: 1px solid var(--clr-primary);
+    // border-color: var(--clr-primary);
+    outline-color: var(--clr-primary);
+  }
+}
+
+.error {
+  display: none;
+  color: var(--clr-secondary);
+  font-size: var(--fs-3);
+  line-height: var(--lh-2);
+}
+
+.error--visible {
+  display: block;
+}
+
+.validatable {
+  margin-block-end: var(--sp-3);
+}

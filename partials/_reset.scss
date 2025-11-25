@@ -17,6 +17,10 @@ button {
   font-size: inherit;
 }
 
+input:focus {
+  outline: none;
+}
+
 img {
   max-width: 100%;
   display: block;
