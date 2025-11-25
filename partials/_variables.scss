@@ -1,5 +1,7 @@
 @use "./utils" as *;
 
+$bp-tablet: #{toRem(600px)};
+
 :root {
   --clr-primary: #0c7d69;
   --clr-primary-tint: hsl(148, 38%, 91%);

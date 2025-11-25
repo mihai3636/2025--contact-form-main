@@ -7,6 +7,10 @@
   margin-block-end: var(--sp-4);
 }
 
+form .validatable {
+  position: relative;
+}
+
 .label {
   display: block;
   font-size: var(--fs-3);

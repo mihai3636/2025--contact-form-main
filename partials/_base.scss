@@ -17,10 +17,6 @@ body {
   padding: var(--sp-5);
 }
 
-label {
-  display: block;
-}
-
 .input-container {
   border-radius: var(--br-2);
   border-width: 0px;
@@ -30,4 +26,12 @@ label {
   &:hover {
     outline-color: var(--clr-primary);
   }
+}
+
+.out-of-flow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
 }
