@@ -81,7 +81,7 @@ body {
 }
 
 .contact {
-  padding: 2rem;
+  padding: var(--sp-7);
   background-color: var(--clr-white);
   border-radius: var(--br-1);
   max-inline-size: var(--desktop-container-width);
@@ -91,7 +91,11 @@ body {
 form {
   display: grid;
   gap: var(--sp-5);
-  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 37.5rem) {
+  form {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .form-group {
@@ -173,7 +177,7 @@ button {
   padding: 0.75em 1.5em;
 }
 button:hover, button:focus-visible {
-  background: var(--dark-teal);
+  background: var(--clr-grey-2);
 }
 
 /*# sourceMappingURL=styles.css.map */
