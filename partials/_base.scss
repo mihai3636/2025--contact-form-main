@@ -2,6 +2,7 @@
 @use "variables" as *;
 
 body {
+  accent-color: var(--clr-primary);
   font-family: var(--ff-main), sans-serif;
   font-size: var(--fs-4);
   font-weight: var(--fw-normal);
@@ -17,21 +18,6 @@ body {
   padding: var(--sp-5);
 }
 
-.input-container {
-  border-radius: var(--br-2);
-  border-width: 0px;
-  outline: 1px solid var(--clr-grey-1);
-
-  &:focus,
-  &:hover {
-    outline-color: var(--clr-primary);
-  }
-}
-
-.out-of-flow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
+.span-all {
+  grid-column: 1 / -1;
 }

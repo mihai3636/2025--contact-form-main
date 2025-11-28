@@ -4,17 +4,10 @@
   box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-td,
-th,
-button {
-  font-weight: inherit;
-  font-size: inherit;
+input,
+button,
+textarea {
+  font: inherit;
 }
 
 img {
@@ -23,9 +16,6 @@ img {
 }
 
 fieldset {
-  border: none;
-}
-
-label {
-  display: block;
+  border: 0;
+  padding: 0;
 }
