@@ -1,52 +1,103 @@
 @use "utils" as *;
 @use "variables" as *;
 
-.form > *:not(:last-child) {
-  // display: flex;
-  // flex-direction: column;
-  margin-block-end: var(--sp-4);
+.contact {
+  padding: 2rem;
+  background-color: var(--clr-white);
+  border-radius: var(--br-1);
+  max-inline-size: var(--desktop-container-width);
+
+  margin: 0 auto;
 }
 
-form .validatable {
+form {
+  display: grid;
+  gap: var(--sp-5);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-group {
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.form-group:has(:not([type="radio"])[required]) label,
+fieldset:has([required]) legend {
+  display: flex;
+  gap: 1ch;
+
+  &::after {
+    content: "*";
+    color: var(--clr-primary);
+  }
+}
+
+.form-group:has([type="radio"], [type="checkbox"]) {
+  display: flex;
+  gap: 1ch;
+}
+
+.form-group:has([type="radio"]) {
   position: relative;
+
+  & label::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+  }
 }
 
-.label {
-  display: block;
-  font-size: var(--fs-3);
-  color: var(--clr-grey-2);
-  margin-block-end: var(--sp-1);
+input,
+textarea,
+.form-group:has(input[type="radio"]) {
+  border: 1px solid var(--clr-grey-2);
+  border-radius: var(--br-2);
+  padding: 0.75em 1.5em;
 }
 
-.label span,
-.checkbox-label span {
-  color: var(--clr-primary);
-}
-
-input[type="text"],
-input[type="email"],
+input,
 textarea {
-  width: 100%;
-  padding: var(--sp-3);
-  font-size: var(--fs-4);
-  font-family: inherit;
-  color: var(--clr-grey-2);
-  // border-color: var(--clr-grey-1);
-
-  cursor: pointer;
+  outline-color: var(--clr-primary);
 }
 
-.error {
-  display: none;
-  color: var(--clr-secondary);
-  font-size: var(--fs-3);
-  line-height: var(--lh-2);
+fieldset {
+  border: 0;
+  padding: 0;
+
+  display: grid;
+  gap: inherit;
+  grid-template-columns: subgrid;
 }
 
-.error--visible {
-  display: block;
+legend {
+  margin-bottom: var(--sp-3);
 }
 
-.validatable {
-  margin-block-end: var(--sp-3);
+input[type="radio"],
+input[type="checkbox"] {
+  width: 1.75cap;
+}
+
+.form-group:has(input[type="radio"]:checked) {
+  background: var(--pale-green);
+  border-color: var(--green);
+}
+
+textarea {
+  box-sizing: content-box;
+  min-block-size: 3lh;
+  resize: block;
+}
+
+button {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  border: 0;
+  border-radius: var(--br-2);
+  padding: 0.75em 1.5em;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--dark-teal);
+  }
 }

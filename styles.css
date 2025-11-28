@@ -73,10 +73,6 @@ body {
   font-weight: var(--fw-normal);
   line-height: 1.5;
   background-color: var(--clr-primary-tint);
-  min-height: 100svh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: var(--sp-5);
 }
 
@@ -84,50 +80,100 @@ body {
   grid-column: 1/-1;
 }
 
-.form > *:not(:last-child) {
-  margin-block-end: var(--sp-4);
+.contact {
+  padding: 2rem;
+  background-color: var(--clr-white);
+  border-radius: var(--br-1);
+  max-inline-size: var(--desktop-container-width);
+  margin: 0 auto;
 }
 
-form .validatable {
-  position: relative;
+form {
+  display: grid;
+  gap: var(--sp-5);
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.label {
-  display: block;
-  font-size: var(--fs-3);
-  color: var(--clr-grey-2);
-  margin-block-end: var(--sp-1);
+.form-group {
+  display: grid;
+  gap: var(--sp-3);
 }
 
-.label span,
-.checkbox-label span {
+.form-group:has(:not([type=radio])[required]) label,
+fieldset:has([required]) legend {
+  display: flex;
+  gap: 1ch;
+}
+.form-group:has(:not([type=radio])[required]) label::after,
+fieldset:has([required]) legend::after {
+  content: "*";
   color: var(--clr-primary);
 }
 
-input[type=text],
-input[type=email],
+.form-group:has([type=radio], [type=checkbox]) {
+  display: flex;
+  gap: 1ch;
+}
+
+.form-group:has([type=radio]) {
+  position: relative;
+}
+.form-group:has([type=radio]) label::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+}
+
+input,
+textarea,
+.form-group:has(input[type=radio]) {
+  border: 1px solid var(--clr-grey-2);
+  border-radius: var(--br-2);
+  padding: 0.75em 1.5em;
+}
+
+input,
 textarea {
-  width: 100%;
-  padding: var(--sp-3);
-  font-size: var(--fs-4);
-  font-family: inherit;
-  color: var(--clr-grey-2);
-  cursor: pointer;
+  outline-color: var(--clr-primary);
 }
 
-.error {
-  display: none;
-  color: var(--clr-secondary);
-  font-size: var(--fs-3);
-  line-height: var(--lh-2);
+fieldset {
+  border: 0;
+  padding: 0;
+  display: grid;
+  gap: inherit;
+  grid-template-columns: subgrid;
 }
 
-.error--visible {
-  display: block;
+legend {
+  margin-bottom: var(--sp-3);
 }
 
-.validatable {
-  margin-block-end: var(--sp-3);
+input[type=radio],
+input[type=checkbox] {
+  width: 1.75cap;
+}
+
+.form-group:has(input[type=radio]:checked) {
+  background: var(--pale-green);
+  border-color: var(--green);
+}
+
+textarea {
+  box-sizing: content-box;
+  min-block-size: 3lh;
+  resize: block;
+}
+
+button {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  border: 0;
+  border-radius: var(--br-2);
+  padding: 0.75em 1.5em;
+}
+button:hover, button:focus-visible {
+  background: var(--dark-teal);
 }
 
 /*# sourceMappingURL=styles.css.map */
