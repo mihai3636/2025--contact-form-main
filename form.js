@@ -50,7 +50,16 @@ form.addEventListener("submit", function (e) {
     console.log("submitting");
     // send the form data
     form.reset();
+    showPopup();
   } else {
     form.querySelector(":invalid").focus();
   }
 });
+
+function showPopup() {
+  const popupEl = document.querySelector(".popup");
+  popupEl.classList.add("popup--visible");
+  setTimeout(() => {
+    popupEl.classList.remove("popup--visible");
+  }, 5000);
+}
