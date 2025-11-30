@@ -59,7 +59,11 @@ form.addEventListener("submit", function (e) {
 function showPopup() {
   const popupEl = document.querySelector(".popup");
   popupEl.classList.add("popup--visible");
+  popupEl.setAttribute("aria-hidden", "false");
+  popupEl.focus();
+
   setTimeout(() => {
     popupEl.classList.remove("popup--visible");
+    popupEl.setAttribute("aria-hidden", "true");
   }, 5000);
 }
